@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Songbooker
 A web application for managing a song book
 * Frontend : Vue.js
