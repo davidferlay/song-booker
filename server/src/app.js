@@ -18,5 +18,12 @@ app.get('/status', (req, res) => {
   })
 })
 
+// Endpoint of post request
+app.post('/register', (req, res) => {
+  res.send({
+    message: 'Hello $(req.body.email}! Registeration successful! Have fun!'
+  })
+})
+
 // Browser access
 app.listen(process.env.PORT || 8081)
