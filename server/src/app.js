@@ -3,6 +3,8 @@ console.log('hello')
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const {sequelize} = require('./models')
+const config = require('./config/config')
 const morgan = require('morgan')
 
 // Building of express app server
@@ -11,19 +13,13 @@ app.use(morgan('combined')) // Log
 app.use(bodyParser.json()) // Parse json easily
 app.use(cors()) // Ressource request control
 
-// Endpoint of get request
-app.get('/status', (req, res) => {
-  res.send({
-    message: 'hello world!'
-  })
-})
+// Call for routes.js
+require('./routes')(app)
 
-// Endpoint of post request
-app.post('/register', (req, res) => {
-  res.send({
-    message: 'Hello $(req.body.email}! Registeration successful! Have fun!'
+// DB mapping
+sequelize.sync()
+  .then(() => {
+    // Browser access
+    app.listen(config.port)
+    console.log(`Server started on port ${config.port}`)
   })
-})
-
-// Browser access
-app.listen(process.env.PORT || 8081)

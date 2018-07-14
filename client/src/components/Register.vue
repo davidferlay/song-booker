@@ -16,6 +16,7 @@
       <button>Register</button>
   </div>
 </template>
+<!-- v-model = Magic keyword for passing and getting data -->
 
 <script>
 import AuthenticationService from '@/services/AuthenticationService'
