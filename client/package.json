@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "1.0.0",
-  "description": "Song-booker vue.js project",
+  "description": "Songbooker vue.js project",
   "author": "David Ferlay <davidferlay@outlook.com>",
   "private": true,
   "scripts": {

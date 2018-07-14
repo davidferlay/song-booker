@@ -1,6 +1,6 @@
 # client
 
-> Song-booker vue.js project
+> Songbooker vue.js project
 
 ## Build Setup
 
