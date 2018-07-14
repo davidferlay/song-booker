@@ -8,7 +8,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'This is your bare template component! Update me as you like.'
     }
   }
 }
