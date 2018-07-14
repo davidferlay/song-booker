@@ -1,2 +1,6 @@
-# songbooker
-A Vue.js / Express.js web application for managing my song book
+<<<<<<< HEAD
+# Songbooker
+A web application for managing a song book
+* Frontend : Vue.js
+* Backend : Express.js
+* Database : Sequelize + SQLite
