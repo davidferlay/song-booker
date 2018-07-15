@@ -25,6 +25,7 @@ module.exports = {
             error: `The password failed to match the following rules :
             <br>
             1. It must contains only letters and numbers. No special character.
+            <br>
             2. It must be at least 8 to 32 characters in length.
             `
           })
