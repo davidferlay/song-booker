@@ -5,12 +5,12 @@
         <v-layout align-center justify-center>
           <v-flex xs12 sm8 md4>
             <v-card class="elevation-12">
-              <v-toolbar dark color="primary">
+              <v-toolbar dark dense color="primary">
                 <v-toolbar-title>Register form</v-toolbar-title>
                 <v-spacer></v-spacer>
                 </v-toolbar>
-                <v-card-text>    
-                  <v-form 
+                <v-card-text>
+                  <v-form
                     name="Songbooker register form">
                     <v-text-field
                       label="Email"
@@ -81,6 +81,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-
 </style>
