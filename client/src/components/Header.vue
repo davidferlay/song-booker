@@ -12,8 +12,8 @@
         Songbooker
         </router-link>
 
-        <v-btn 
-            flat 
+        <v-btn
+            flat
             dark
             router
             to="/"
@@ -23,8 +23,8 @@
     </v-toolbar-title>
 
     <v-toolbar-items>
-        <v-btn 
-            flat 
+        <v-btn
+            flat
             dark
             router
             to="#"
@@ -33,8 +33,15 @@
     </v-toolbar-items>
 
     <v-spacer></v-spacer>
-        <v-btn 
-            flat 
+        <v-btn
+            flat
+            dark
+            router
+            to="login"
+            >Login
+        </v-btn>
+        <v-btn
+            flat
             dark
             router
             to="register"
@@ -63,5 +70,5 @@ export default {
 <style scoped>
 .home {
     cursor:pointer;
-}   
+}
 </style>

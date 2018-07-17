@@ -8,7 +8,11 @@ module.exports = {
       dialect: process.env.DIALECT || 'sqlite',
       host: process.env.HOST || 'localhost',
       storage: './songbooker.sqlite'
+      // process.env. expressions allows for override with fallback value after double pipe
     }
+  },
+  authentication: {
+    jwtSecret: process.env.JWT_SECRET || 'secret'
+    // Signs the jwt tokens with secret string
   }
 }
-// process.env. expresisons allows for override with fallback

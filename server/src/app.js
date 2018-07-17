@@ -18,6 +18,8 @@ require('./routes')(app)
 
 // DB mapping
 sequelize.sync()
+// Executing line bellow will clean database
+// sequelize.sync({force: true})
   .then(() => {
     // Browser access
     app.listen(config.port)
