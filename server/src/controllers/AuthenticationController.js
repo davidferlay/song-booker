@@ -15,7 +15,12 @@ module.exports = {
   async register (req, res) {
     try {
       const user = await User.create(req.body)
-      res.send(user.toJSON())
+      const userJSON = user.toJSON()
+      // console.log(userJSON)
+      res.send({
+        user: userJSON,
+        token: jwtSignUser(userJSON)
+      })
     } catch (err) {
       res.status(400).send({
         error: 'Email already used'
@@ -38,8 +43,8 @@ module.exports = {
           error: 'Login info is incorrect'
         })
       }
-      // Password is valid (true) if entry matches db value
-      const isPasswordValid = password === user.password
+      // Hashed password is valid (true) if entry matches hashed db value
+      const isPasswordValid = await user.comparePassword(password)
       // console.log(isPasswordValid)
       // console.log(password, user.password)
       if (!isPasswordValid) {
