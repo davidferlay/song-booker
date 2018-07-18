@@ -34,6 +34,7 @@
 
     <v-spacer></v-spacer>
         <v-btn
+            v-if="!$store.state.isUserLoggedIn"
             flat
             dark
             router
@@ -41,6 +42,7 @@
             >Login
         </v-btn>
         <v-btn
+            v-if="!$store.state.isUserLoggedIn"
             flat
             dark
             router
