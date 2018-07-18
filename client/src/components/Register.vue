@@ -17,6 +17,7 @@
                       v-model="email"
                       type="email"
                       prepend-icon="person"
+                      @keyup.native.enter="register"
                       class="field">
                       autofocus
                     </v-text-field>
@@ -25,6 +26,7 @@
                       label="Password"
                       type="password"
                       v-model="password"
+                      @keyup.native.enter="register"
                       prepend-icon="lock"
                       autocomplete="new-password"
                       class="field">
@@ -36,6 +38,7 @@
                 <v-btn
                   dark
                   class="cyan"
+                  type="submit"
                   @click="register">
                   Register
                 </v-btn>
@@ -79,6 +82,5 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 </style>

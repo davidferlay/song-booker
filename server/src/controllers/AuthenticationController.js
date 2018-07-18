@@ -49,7 +49,7 @@ module.exports = {
       // console.log(password, user.password)
       if (!isPasswordValid) {
         return res.status(403).send({
-          error: 'Password info is incorrect'
+          error: 'Login info is incorrect'
         })
       }
 

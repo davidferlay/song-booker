@@ -14,8 +14,9 @@
                     name="Songbooker login form">
                     <v-text-field
                       label="Email"
-                      v-model="email"
                       type="email"
+                      v-model="email"
+                      @keyup.native.enter="login"
                       prepend-icon="person"
                       class="field">
                       autofocus
@@ -25,6 +26,7 @@
                       label="Password"
                       type="password"
                       v-model="password"
+                      @keyup.native.enter="login"
                       prepend-icon="lock"
                       autocomplete="new-password"
                       class="field">
