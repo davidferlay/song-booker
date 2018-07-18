@@ -13,6 +13,6 @@ module.exports = {
   },
   authentication: {
     jwtSecret: process.env.JWT_SECRET || 'secret'
-    // Signs the jwt tokens with secret string
   }
 }
+// Signs the jwt tokens with secret string

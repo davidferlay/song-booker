@@ -1,7 +1,7 @@
 
 const {User} = require('../models')
 const jwt = require('jsonwebtoken')
-const {config} = require('../config/config')
+const config = require('../config/config')
 
 // Helper function to sign the user object using the jwt library and gives us back a jwt token
 function jwtSignUser (user) {
@@ -40,13 +40,11 @@ module.exports = {
       }
       // Password is valid (true) if entry matches db value
       const isPasswordValid = password === user.password
-      // Line bellow to check if password is valid
       // console.log(isPasswordValid)
-      // Line bellow to compare password values
       // console.log(password, user.password)
       if (!isPasswordValid) {
         return res.status(403).send({
-          error: 'Login info is incorrect'
+          error: 'Password info is incorrect'
         })
       }
 
