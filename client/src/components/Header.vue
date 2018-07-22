@@ -49,6 +49,13 @@
             to="register"
             >Sign Up
         </v-btn>
+        <v-btn
+            v-if="$store.state.isUserLoggedIn"
+            flat
+            dark
+            @click="logout">
+            Log Out
+        </v-btn>
 
         <!-- <v-btn icon>
         <v-icon>search</v-icon>
@@ -59,16 +66,18 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'XXX'
+  methods: {
+    logout () {
+      this.$store.dispatch('setToken', null)
+      this.$store.dispatch('setUser', null)
+      this.$router.push({
+        name: 'root'
+      })
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .home {
     cursor:pointer;
