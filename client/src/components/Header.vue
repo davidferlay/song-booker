@@ -26,8 +26,7 @@
         <v-btn
             flat
             dark
-            router
-            to="#"
+            to="songs"
             >Browse
         </v-btn>
     </v-toolbar-items>
@@ -53,8 +52,8 @@
             v-if="$store.state.isUserLoggedIn"
             flat
             dark
-            @click="logout">
-            Log Out
+            @click="logout"
+            >Log Out
         </v-btn>
 
         <!-- <v-btn icon>
