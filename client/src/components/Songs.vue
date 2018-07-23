@@ -1,19 +1,14 @@
 <template>
   <v-app id="inspire">
     <v-content>
-      <v-container fluid fill-height>
-        <v-layout align-center justify-center>
-          <v-flex xs12 sm8 md4>
-            <v-card class="elevation-12">
-              <v-toolbar dark dense color="primary">
-                <v-toolbar-title>Songs</v-toolbar-title>
-                <v-spacer></v-spacer>
-                </v-toolbar>
-
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
+            <panel title="Songs">
+                <div v-for="song in songs"
+                  :key="song.title">
+                  {{song.title}} -
+                  {{song.artist}} -
+                  {{song.album}}
+                </div>
+            </panel>
     </v-content>
   </v-app>
 </template>
@@ -21,8 +16,22 @@
 // You can insert v- attributes (v-model, v-html and others) here to bind method of script section
 
 <script>
+import Panel from '@/components/Panel'
 export default {
-
+  components: {
+    Panel
+  },
+  data () {
+    return {
+      songs: [
+        {
+        title: 'Float on',
+        artist: 'Modest Mouse',
+        album: 'Good news'
+        }
+      ]
+    }
+  }
 }
 </script>
 
