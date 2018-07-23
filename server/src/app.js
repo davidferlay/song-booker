@@ -17,9 +17,8 @@ app.use(cors()) // Ressource request control
 require('./routes')(app)
 
 // DB mapping
-// sequelize.sync()
-// Executing line bellow will clean database
-sequelize.sync({force: true})
+// Set to true and save to clean database
+sequelize.sync({force: false})
   .then(() => {
     // Browser access
     app.listen(config.port)

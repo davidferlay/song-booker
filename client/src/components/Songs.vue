@@ -16,6 +16,7 @@
 // You can insert v- attributes (v-model, v-html and others) here to bind method of script section
 
 <script>
+import SongsService from '@/services/SongsService'
 import Panel from '@/components/Panel'
 export default {
   components: {
@@ -23,14 +24,12 @@ export default {
   },
   data () {
     return {
-      songs: [
-        {
-        title: 'Float on',
-        artist: 'Modest Mouse',
-        album: 'Good news'
-        }
-      ]
+      songs: null
     }
+  },
+  async mounted () {
+    // do a request to the backend to list all songs
+    this.songs = await SongsService.index()
   }
 }
 </script>
