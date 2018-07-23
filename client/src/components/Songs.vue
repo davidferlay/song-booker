@@ -3,7 +3,7 @@
     <v-content>
             <panel title="Songs">
                 <div v-for="song in songs"
-                  :key="song.title">
+                  :key="song.id">
                   {{song.title}} -
                   {{song.artist}} -
                   {{song.album}}
@@ -29,7 +29,7 @@ export default {
   },
   async mounted () {
     // do a request to the backend to list all songs
-    this.songs = await SongsService.index()
+    this.songs = (await SongsService.index()).data
   }
 }
 </script>
