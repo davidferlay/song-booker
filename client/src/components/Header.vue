@@ -27,7 +27,13 @@
             flat
             dark
             to="songs"
-            >Browse
+            >Songs
+        </v-btn>
+        <v-btn
+            flat
+            dark
+            to="songs/create"
+            >Create
         </v-btn>
     </v-toolbar-items>
 
