@@ -1,13 +1,12 @@
 <template>
     <v-container grid-list-md text-xs-center>
         <v-layout wrap>
-            
+
         <v-flex d-flex>
             <v-card dark color="secondary">
                 <v-card-text class="px-0">left</v-card-text>
                 <v-card-text>
-                    <v-form
-                    name="Song Metadata">
+                    <v-form name="Song Metadata">
                         <v-text-field
                             label="Title"
                             v-model="title"
@@ -45,15 +44,27 @@
                             v-model="youtubeId"
                             prepend-icon="person"
                         ></v-text-field>
-                        <br>
-   
-   
                     </v-form>
                 </v-card-text>
             </v-card>
 
-            <v-card dark color="primary">
-               <v-card-text class="px-0">right</v-card-text>
+            <v-card dark color="secondary">
+                <v-card-text class="px-0">right</v-card-text>
+                <v-card-text>
+                    <v-form name="Song Metadata">
+                        <v-text-field
+                            label="Lyrics"
+                            v-model="lyrics"
+                            prepend-icon="person"
+                        ></v-text-field>
+                        <br>
+                        <v-text-field
+                            label="Tablature"
+                            v-model="tab"
+                            prepend-icon="person"
+                        ></v-text-field>
+                        </v-form>
+                </v-card-text>
             </v-card>
         </v-flex>
 
