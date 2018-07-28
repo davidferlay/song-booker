@@ -1,10 +1,12 @@
 <template>
     <v-container grid-list-md text-xs-center>
         <v-layout wrap>
-
+            <v-card-text
+            class="h1"
+            >Create your Song here</v-card-text>
         <v-flex d-flex>
             <v-card dark color="secondary">
-                <v-card-text class="px-0">Song Metadata</v-card-text>
+                <v-card-text class="px-0">Metadata</v-card-text>
                 <v-card-text>
                     <v-form name="Song Metadata">
                         <v-text-field
@@ -49,7 +51,7 @@
             </v-card>
 
             <v-card dark color="secondary">
-                <v-card-text class="px-0">Song Structure</v-card-text>
+                <v-card-text class="px-0">Structure</v-card-text>
                 <v-card-text>
                     <v-form name="Song Structure">
                         <v-text-field
@@ -126,5 +128,8 @@ export default {
 </script>
 
 <style scoped>
-
+.h1 {
+  font-weight: normal;
+  font-size:2rem
+}
 </style>
