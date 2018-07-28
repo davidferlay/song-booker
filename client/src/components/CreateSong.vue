@@ -4,12 +4,12 @@
 
         <v-flex d-flex>
             <v-card dark color="secondary">
-                <v-card-text class="px-0">left</v-card-text>
+                <v-card-text class="px-0">Song Metadata</v-card-text>
                 <v-card-text>
                     <v-form name="Song Metadata">
                         <v-text-field
                             label="Title"
-                            v-model="title"
+                            v-model="song.title"
                             @keyup.native.enter="login"
                             prepend-icon="person"
                             autofocus
@@ -17,31 +17,31 @@
                         <br>
                         <v-text-field
                             label="Artist"
-                            v-model="artist"
+                            v-model="song.artist"
                             prepend-icon="person"
                         ></v-text-field>
                         <br>
                         <v-text-field
                             label="Genre"
-                            v-model="genre"
+                            v-model="song.genre"
                             prepend-icon="person"
                         ></v-text-field>
                         <br>
                         <v-text-field
                             label="Album"
-                            v-model="album"
+                            v-model="song.album"
                             prepend-icon="person"
                         ></v-text-field>
                         <br>
                         <v-text-field
                             label="Album Image Url"
-                            v-model="albumImageUrl"
+                            v-model="song.albumImageUrl"
                             prepend-icon="person"
                         ></v-text-field>
                         <br>
                         <v-text-field
                             label="Youtube Id"
-                            v-model="youtubeId"
+                            v-model="song.youtubeId"
                             prepend-icon="person"
                         ></v-text-field>
                     </v-form>
@@ -49,19 +49,21 @@
             </v-card>
 
             <v-card dark color="secondary">
-                <v-card-text class="px-0">right</v-card-text>
+                <v-card-text class="px-0">Song Structure</v-card-text>
                 <v-card-text>
-                    <v-form name="Song Metadata">
+                    <v-form name="Song Structure">
                         <v-text-field
                             label="Lyrics"
-                            v-model="lyrics"
+                            v-model="song.lyrics"
                             prepend-icon="person"
+                            textarea
                         ></v-text-field>
                         <br>
                         <v-text-field
                             label="Tablature"
-                            v-model="tab"
+                            v-model="song.tab"
                             prepend-icon="person"
+                            textarea
                         ></v-text-field>
                         </v-form>
                 </v-card-text>
@@ -69,21 +71,16 @@
         </v-flex>
 
         <v-flex xs12>
-            <v-card dark color="primary">
-                <v-card-text class="px-0">bottom</v-card-text>
-
+            <v-card>
                 <v-card-text>
-                    <br>
-                        <div class="danger-alert" v-html="error" />
-                    <br>
+                    <div class="danger-alert" v-html="error" />
                     <v-btn
                         dark
                         class="cyan"
-                        @click="login">
-                        Login
+                        @click="create">
+                        Save
                     </v-btn>
                 </v-card-text>
-
             </v-card>
         </v-flex>
 
@@ -92,6 +89,8 @@
 </template>
 
 <script>
+import SongService from '@/services/SongsService'
+
 export default {
   data () {
     return {
@@ -107,6 +106,16 @@ export default {
       },
       error: null,
       required: (value) => !!value || 'Required.'
+    }
+  },
+  methods: {
+    async create () {
+      // Call API
+      try {
+        await SongService.post(this.song)
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
 }
