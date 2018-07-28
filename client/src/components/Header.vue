@@ -29,12 +29,6 @@
             to="songs"
             >Songs
         </v-btn>
-        <v-btn
-            flat
-            dark
-            to="songs/create"
-            >Create
-        </v-btn>
     </v-toolbar-items>
 
     <v-spacer></v-spacer>

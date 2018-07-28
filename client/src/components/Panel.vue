@@ -8,6 +8,7 @@
               <v-toolbar dark dense color="primary">
                 <v-toolbar-title>{{title}}</v-toolbar-title>
                 <v-spacer></v-spacer>
+                <slot name="action" />
               </v-toolbar>
               <slot>
                   No content in slot

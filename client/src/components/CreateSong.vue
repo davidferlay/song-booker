@@ -11,7 +11,7 @@
                             label="Title"
                             v-model="song.title"
                             @keyup.native.enter="login"
-                            prepend-icon="person"
+                            prepend-icon="music_note"
                             autofocus
                         ></v-text-field>
                         <br>
@@ -24,25 +24,25 @@
                         <v-text-field
                             label="Genre"
                             v-model="song.genre"
-                            prepend-icon="person"
+                            prepend-icon="equalizer"
                         ></v-text-field>
                         <br>
                         <v-text-field
                             label="Album"
                             v-model="song.album"
-                            prepend-icon="person"
+                            prepend-icon="album"
                         ></v-text-field>
                         <br>
                         <v-text-field
                             label="Album Image Url"
                             v-model="song.albumImageUrl"
-                            prepend-icon="person"
+                            prepend-icon="image"
                         ></v-text-field>
                         <br>
                         <v-text-field
                             label="Youtube Id"
                             v-model="song.youtubeId"
-                            prepend-icon="person"
+                            prepend-icon="movie"
                         ></v-text-field>
                     </v-form>
                 </v-card-text>
@@ -55,14 +55,14 @@
                         <v-text-field
                             label="Lyrics"
                             v-model="song.lyrics"
-                            prepend-icon="person"
+                            prepend-icon="queue_music"
                             textarea
                         ></v-text-field>
                         <br>
                         <v-text-field
                             label="Tablature"
                             v-model="song.tab"
-                            prepend-icon="person"
+                            prepend-icon="drag_indicator"
                             textarea
                         ></v-text-field>
                         </v-form>
@@ -110,9 +110,13 @@ export default {
   },
   methods: {
     async create () {
-      // Call API
       try {
+        // Call API
         await SongService.post(this.song)
+        // Redirect to page
+        this.$router.push({
+          name: 'songs'
+        })
       } catch (err) {
         console.log(err)
       }

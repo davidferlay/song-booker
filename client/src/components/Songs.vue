@@ -2,6 +2,18 @@
   <v-app id="inspire">
     <v-content>
             <panel title="Songs">
+                <v-btn
+                  slot="action"
+                  @click="navigateTo({name: 'songs-create'})"
+                  class="blue"
+                  dark
+                  absolute
+                  right
+                  middle
+                  mt-3
+                  fab>
+                  <v-icon>add</v-icon>
+                </v-btn>
                 <div v-for="song in songs"
                   :key="song.id">
                   {{song.title}} -
@@ -12,8 +24,6 @@
     </v-content>
   </v-app>
 </template>
-// To write your html
-// You can insert v- attributes (v-model, v-html and others) here to bind method of script section
 
 <script>
 import SongsService from '@/services/SongsService'
@@ -25,6 +35,11 @@ export default {
   data () {
     return {
       songs: null
+    }
+  },
+  methods: {
+    navigateTo (route) {
+      this.$router.push(route)
     }
   },
   async mounted () {
