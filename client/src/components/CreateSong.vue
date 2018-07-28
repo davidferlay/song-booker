@@ -15,12 +15,16 @@
                             @keyup.native.enter="login"
                             prepend-icon="music_note"
                             autofocus
+                            required
+                            :rules="[required]"
                         ></v-text-field>
                         <br>
                         <v-text-field
                             label="Artist"
                             v-model="song.artist"
                             prepend-icon="person"
+                            required
+                            :rules="[required]"
                         ></v-text-field>
                         <br>
                         <v-text-field
@@ -112,6 +116,14 @@ export default {
   },
   methods: {
     async create () {
+      // Display msg is required fields are not filled in at posting
+      const areAllFieldsFilledIn = Object
+        .keys(this.song)
+        .every(key => !!this.song[key])
+      if(!areAllFieldsFilledIn) {
+          this.error = 'Please fill in all required fields.'
+          return
+      }
       try {
         // Call API
         await SongService.post(this.song)
@@ -130,6 +142,9 @@ export default {
 <style scoped>
 .h1 {
   font-weight: normal;
-  font-size:2rem
-}
+  font-size:2rem}
+
+.danger-alert {
+    color: red}
+
 </style>
