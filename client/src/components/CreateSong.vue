@@ -120,9 +120,9 @@ export default {
       const areAllFieldsFilledIn = Object
         .keys(this.song)
         .every(key => !!this.song[key])
-      if(!areAllFieldsFilledIn) {
-          this.error = 'Please fill in all required fields.'
-          return
+      if (!areAllFieldsFilledIn) {
+        this.error = 'Please fill in all required fields.'
+        return
       }
       try {
         // Call API

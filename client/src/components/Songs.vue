@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-content>
             <panel title="Songs">
-              
+
                 <v-btn
                   slot="action"
                   @click="navigateTo({name: 'songs-create'})"
@@ -17,7 +17,7 @@
                 </v-btn>
 
                 <div
-                  class="song" 
+                  class="song"
                   v-for="song in songs"
                   :key="song.id">
                   <v-layout>
@@ -46,7 +46,7 @@
                     </v-flex>
 
                     <v-flex xs6>
-                      <img class="album-image" 
+                      <img class="album-image"
                       :src="song.albumImageUrl">
                     </v-flex>
 
