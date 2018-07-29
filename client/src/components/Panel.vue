@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-content>
-      <v-container fluid fill-height>
+      <v-container fluid>
         <v-layout align-center justify-center>
             <v-card class="elevation-12">
               <v-toolbar dark dense color="primary">

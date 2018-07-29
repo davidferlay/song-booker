@@ -1,20 +1,27 @@
 <template>
   <div>
     <v-layout>
+
       <v-flex xs6>
         <song-metadata :song="song" />
       </v-flex>
-       <v-flex xs6 class="ml-2">
+
+      <v-flex xs6>
         <you-tube :youtubeId="song.youtubeId" />
       </v-flex>
+
     </v-layout>
-     <v-layout class="mt-2">
+
+    <v-layout>
+
       <v-flex xs6>
         <tab :song="song" />
       </v-flex>
-       <v-flex xs6 class="ml-2">
+
+      <v-flex xs6 class="ml-2">
         <lyrics :song="song" />
       </v-flex>
+
     </v-layout>
   </div>
 </template>
@@ -22,7 +29,7 @@
 <script>
 // import Lyrics from './Lyrics'
 // import Tab from './Tab'
-// import YouTube from './YouTube'
+import YouTube from './YouTube'
 import SongsService from '@/services/SongsService'
 import SongMetadata from './SongMetadata'
 import Panel from '@/components/Panel'
@@ -38,8 +45,8 @@ export default {
   },
   components: {
     Panel,
-    SongMetadata
-    // YouTube,
+    SongMetadata,
+    YouTube
     // Lyrics,
     // Tab
   }
