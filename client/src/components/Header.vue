@@ -16,7 +16,7 @@
             flat
             dark
             router
-            to="/"
+            :to="{ name: 'root' }"
             >Home
         </v-btn>
 
@@ -26,7 +26,7 @@
         <v-btn
             flat
             dark
-            to="songs"
+            :to="{ name: 'songs' }"
             >Songs
         </v-btn>
     </v-toolbar-items>
@@ -37,7 +37,7 @@
             flat
             dark
             router
-            to="login"
+            :to="{ name: 'login' }"
             >Login
         </v-btn>
         <v-btn
@@ -45,7 +45,7 @@
             flat
             dark
             router
-            to="register"
+            :to="{ name: 'register' }"
             >Sign Up
         </v-btn>
         <v-btn
