@@ -97,5 +97,6 @@ export default {
 .album-image {
   width: 75%;
   margin: 0 auto;
+  overflow: hidden;
 }
 </style>

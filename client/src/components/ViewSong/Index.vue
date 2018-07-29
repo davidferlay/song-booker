@@ -15,7 +15,7 @@
     <v-layout>
 
       <v-flex xs6>
-        <!-- <song-metadata :song="song" /> -->
+        <tab :song="song" />
       </v-flex>
 
       <v-flex xs6>
@@ -26,10 +26,12 @@
 
   </div>
 </template>
+// In here, v-layout is a raw, v-flex is each column of that row
+// Sub components called : song-metadata, you-tube, tab, lyrics
 
 <script>
 import Lyrics from './Lyrics'
-// import Tab from './Tab'
+import Tab from './Tab'
 import YouTube from './YouTube'
 import SongsService from '@/services/SongsService'
 import SongMetadata from './SongMetadata'
@@ -48,8 +50,8 @@ export default {
     Panel,
     SongMetadata,
     YouTube,
-    Lyrics
-    // Tab
+    Lyrics,
+    Tab
   }
 }
 </script>
