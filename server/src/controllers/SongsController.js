@@ -40,5 +40,22 @@ module.exports = {
         error: 'An error has occured trying to create the song'
       })
     }
+  },
+  // Enpoint to update song items using put method
+  async put (req, res) {
+    try {
+      console.log('We are here #1')
+      const song = await Song.update(req.body, {
+        where: {
+          id: req.params.songId
+        }
+      })
+      res.send(song)
+    } catch (err) {
+      console.log('We are here #2', err)
+      res.status(500).send({
+        error: 'An error has occured trying to update the song'
+      })
+    }
   }
 }
