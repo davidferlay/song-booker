@@ -2,7 +2,7 @@
 const {Song} = require('../models')
 
 module.exports = {
-  // 1st endpoint to get song items
+  // Endpoint to get song items using index method
   async index (req, res) {
     try {
       const song = await Song.findAll({
@@ -16,7 +16,19 @@ module.exports = {
       })
     }
   },
-  // 2nd endpoint to create song items
+  // Endpoint to get song page data using show method
+  async show (req, res) {
+    try {
+      const song = await Song.findById(req.params.songId)
+      res.send(song)
+    } catch (err) {
+      console.log(err)
+      res.status(500).send({
+        error: 'An error has occured trying to fetch the song data'
+      })
+    }
+  },
+  // Enpoint to create song items using post method
   async post (req, res) {
     try {
       console.log('We are here #1')
