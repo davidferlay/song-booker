@@ -1,5 +1,4 @@
 <template>
-    <v-content>
       <v-container>
         <v-layout>
             <v-card class="elevation-12">
@@ -14,7 +13,6 @@
             </v-card>
         </v-layout>
       </v-container>
-    </v-content>
 </template>
 
 <script>

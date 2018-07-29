@@ -1,5 +1,4 @@
 <template>
-    <v-content>
             <panel title="Songs">
 
                 <v-btn
@@ -52,7 +51,6 @@
                   </v-layout>
                 </div>
             </panel>
-    </v-content>
 </template>
 
 <script>
