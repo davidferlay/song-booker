@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar dark dense color="primary">
+  <v-toolbar fixed dark dense color="primary">
     <v-toolbar-side-icon></v-toolbar-side-icon>
 
     <v-toolbar-title class="white--text">

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-app>
+    <v-app id="inspire" toolbar>
       <page-header app></page-header>
         <main>
           <v-container fluid>
@@ -29,6 +29,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 0px;
+  /* margin-top: 0px; */
+  margin-top: 40px; /* because of header toolbar */
+
+
 }
 </style>

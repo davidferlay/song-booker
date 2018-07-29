@@ -1,5 +1,4 @@
 <template>
-  <v-app id="inspire">
     <v-content>
             <panel title="Songs">
 
@@ -54,7 +53,6 @@
                 </div>
             </panel>
     </v-content>
-  </v-app>
 </template>
 
 <script>
@@ -85,7 +83,6 @@ export default {
 .song {
   padding: 20px;
   height: 330px;
-  overflow: hidden;
 }
 .song-title {
   font-weight: normal;
