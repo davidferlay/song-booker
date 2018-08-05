@@ -1,15 +1,21 @@
 <template>
-  <songs-panel />
+  <v-layout>
+    <v-flex>
+      <songs-search-panel />
+      <songs-panel />
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
 import SongsPanel from './SongsPanel'
+import SongsSearchPanel from './SongsSearchPanel'
 import SongsService from '@/services/SongsService'
-import Panel from '@/components/Panel'
+
 export default {
   components: {
-    Panel,
-    SongsPanel
+    SongsPanel,
+    SongsSearchPanel
   },
   data () {
     return {

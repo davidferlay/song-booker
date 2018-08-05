@@ -1,65 +1,61 @@
 <template>
-            <panel title="Songs">
+  <panel title="Songs">
 
-                <v-btn
-                  slot="action"
-                  @click="navigateTo({name: 'songs-create'})"
-                  class="blue"
-                  dark
-                  absolute
-                  right
-                  middle
-                  mt-3
-                  fab>
-                  <v-icon>add</v-icon>
-                </v-btn>
+      <v-btn
+        slot="action"
+        @click="navigateTo({name: 'songs-create'})"
+        class="blue"
+        dark
+        absolute
+        right
+        middle
+        mt-3
+        fab>
+        <v-icon>add</v-icon>
+      </v-btn>
 
-                <div
-                  class="song"
-                  v-for="song in songs"
-                  :key="song.id">
-                  <v-layout>
+      <div
+        class="song"
+        v-for="song in songs"
+        :key="song.id">
+        <v-layout>
 
-                    <v-flex xs6>
-                      <div class="song-title">
-                        {{song.title}}
-                      </div>
-                      <div class="song-artist">
-                        {{song.artist}}
-                      </div>
-                      <div class="song-genre">
-                        {{song.genre}}
-                      </div>
-                      <v-btn
-                          dark
-                          class="cyan"
-                          @click="navigateTo({
-                            name: 'song',
-                            params: {
-                              songId: song.id
-                            }
-                          })">
-                          See
-                      </v-btn>
-                    </v-flex>
+          <v-flex xs6>
+            <div class="song-title">
+              {{song.title}}
+            </div>
+            <div class="song-artist">
+              {{song.artist}}
+            </div>
+            <div class="song-genre">
+              {{song.genre}}
+            </div>
+            <v-btn
+                dark
+                class="cyan"
+                @click="navigateTo({
+                  name: 'song',
+                  params: {
+                    songId: song.id
+                  }
+                })">
+                See
+            </v-btn>
+          </v-flex>
 
-                    <v-flex xs6>
-                      <img class="album-image"
-                      :src="song.albumImageUrl">
-                    </v-flex>
+          <v-flex xs6>
+            <img class="album-image"
+            :src="song.albumImageUrl">
+          </v-flex>
 
-                  </v-layout>
-                </div>
-            </panel>
+        </v-layout>
+      </div>
+  </panel>
 </template>
 
 <script>
 import SongsService from '@/services/SongsService'
-import Panel from '@/components/Panel'
 export default {
-  components: {
-    Panel
-  },
   data () {
     return {
       songs: null

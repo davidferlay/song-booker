@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import Panel from '@/components/Panel'
 import VueYouTubeEmbed from 'vue-youtube-embed'
 import Vue from 'vue'
 
@@ -20,10 +19,7 @@ Vue.use(VueYouTubeEmbed)
 export default {
   props: [
     'youtubeId'
-  ],
-  components: {
-    Panel
-  }
+  ]
 }
 </script>
 
