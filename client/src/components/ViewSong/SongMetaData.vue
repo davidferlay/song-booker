@@ -24,7 +24,7 @@
           })">
           Edit
         </v-btn>
-                    
+
       </v-flex>
 
       <v-flex xs6>
