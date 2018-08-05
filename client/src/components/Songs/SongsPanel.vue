@@ -67,7 +67,7 @@ export default {
     }
   },
   watch: {
-    // Watch url and pass query parameter as search string
+    // Update list based on query parameter search string
     '$route.querry.search': {
       immediate: true,
       async handler (value) {

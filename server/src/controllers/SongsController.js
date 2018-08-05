@@ -7,7 +7,6 @@ module.exports = {
     try {
       let songs = null
       const search = req.query.search
-      console.log('Yay')
       if (search) {
         songs = await Song.findAll({
           where: {
@@ -27,9 +26,8 @@ module.exports = {
       }
       res.send(songs)
     } catch (err) {
-      console.log(err)
       res.status(500).send({
-        error: 'An error has occured trying to fetch the songs'
+        error: 'an error has occured trying to fetch the songs'
       })
     }
   },
