@@ -66,7 +66,7 @@ export default {
       this.$router.push(route)
     }
   },
-  watch : {
+  watch: {
     // Watch url and pass query parameter as search string
     '$route.querry.search': {
       immediate: true,

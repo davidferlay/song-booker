@@ -5,10 +5,27 @@ module.exports = {
   // Endpoint to get song items using index method
   async index (req, res) {
     try {
-      const song = await Song.findAll({
-        limit: 10
-      })
-      res.send(song)
+      let songs = null
+      const search = req.query.search
+      console.log('Yay')
+      if (search) {
+        songs = await Song.findAll({
+          where: {
+            $or: [
+              'title', 'artist', 'genre', 'album'
+            ].map(key => ({
+              [key]: {
+                $like: `%${search}%`
+              }
+            }))
+          }
+        })
+      } else {
+        songs = await Song.findAll({
+          limit: 10
+        })
+      }
+      res.send(songs)
     } catch (err) {
       console.log(err)
       res.status(500).send({
