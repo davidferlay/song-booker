@@ -7,7 +7,7 @@
         class="home"
         tag="span"
         :to="{
-            name: 'root'
+            name: 'songs'
         }">
         Songbooker
         </router-link>
@@ -16,7 +16,7 @@
             flat
             dark
             router
-            :to="{ name: 'root' }"
+            :to="{ name: 'songs' }"
             >Home
         </v-btn>
 
@@ -70,7 +70,7 @@ export default {
       this.$store.dispatch('setToken', null)
       this.$store.dispatch('setUser', null)
       this.$router.push({
-        name: 'root'
+        name: 'songs'
       })
     }
   }
